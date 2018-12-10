@@ -1,46 +1,23 @@
 #pragma once
-#ifndef ___BitSet
+#ifndef ___Member
+#define ___Member
 
-#define ___BitSet
+typedef struct {
+	int no;
+	char name[20];
+}Member;
 
+#define MEMBER_NO 1
 
+#define MEMBER_NAME 2
 
-typedef unsigned long BitSet;
+int MemberNoCmp(const Member *x, const Member *y);
 
+int MemberNameCmp(const Member *x, const Member *y);
 
+void PrintMember(const Member *x);
 
-#define BitBitSetNull     (BitSet)0
+void PrintLnMember(const Member *x);
 
-#define BitSetBits           32
-
-#define Set0f(no)  ((BitSet)1 <<(no))
-
-
-
-int isMemner(BitSet s, int n);
-
-
-
-void Add(BitSet *s, int n);
-
-
-
-void Remove(BitSet *s, int n);
-
-
-
-int Size(BitSet s);
-
-
-
-void Print(BitSet s);
-
-
-
-void Println(BitSet s);
-
-
-
+Member ScanMember(const char *message, int sw);
 #endif
-
-
